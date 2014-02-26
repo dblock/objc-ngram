@@ -1,4 +1,6 @@
 language: objective-c
+before_script:
+  - cd Demo ; pod install
 xcode_project: Demo/Demo.xcodeproj
 xcode_scheme: Demo
 xcode_sdk: iphonesimulator
