@@ -66,9 +66,14 @@ const NSInteger defaultWidth = 3;
     NSInteger stepMax = str.length - width;
     if (stepMax >= 0) {
         for (int step = 0; step <= stepMax; step += stepSize) {
+            // Assigning scores to ngrams with the square root-based scoring function
+            // and multiplying scores of matching ngrams together yields a score function that has the
+            // property that score(x,y) > score(x,z) for any string z containing y and score(x,y) > score(x,z)
+            // for any string z contained in y.
+            CGFloat score = (step == 0) ? 1 + 1.0f / str.length : 2.0f / str.length;
             NSInteger rangeWidth = fmin(width, str.length - step);
             NSString *substring = [str substringWithRange:NSMakeRange(step, rangeWidth)];
-            [ngrams setObject:substring forKey:substring];
+            [ngrams setObject:@(score) forKey:substring];
         }
     }
     return ngrams;

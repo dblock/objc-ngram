@@ -38,38 +38,38 @@ describe(@"ngramsForString", ^{
     });
 
     it(@"returns a 3-character n-gram", ^{
-        NSDictionary *expectedResult = @{ @"abc": @"abc" };
+        NSDictionary *expectedResult = @{ @"abc": @(1 + 1.0f/3) };
         expect([dict ngramsForString:@"abc"]).to.equal(expectedResult);
     });
 
     it(@"returns a maximum number of n-grams", ^{
         NSDictionary *expectedResult = @{
-            @"abc": @"abc",
-            @"efg": @"efg",
-            @"ijk": @"ijk"
+            @"abc": @(1 + 1.0f/11),
+            @"efg": @(2.0f/11),
+            @"ijk": @(2.0f/11)
         };
         expect([dict ngramsForString:@"abcdefghijk" withMax:3 andWidth:3]).to.equal(expectedResult);
     });
     
     it(@"returns 3-grams by default", ^{
         NSDictionary *expectedResult = @{
-           @"abc": @"abc",
-           @"bcd": @"bcd"
+           @"abc": @(1 + 1.0f/4),
+           @"bcd": @(2.0f/4)
         };
         expect([dict ngramsForString:@"abcd"]).to.equal(expectedResult);
     });
     
-    it(@"returns 7-grams", ^{
+    it(@"returns 9-grams", ^{
         NSDictionary *expectedResult = @{
-            @"bcdefghij" : @"bcdefghij",
-            @"abcdefghi" : @"abcdefghi"
+            @"abcdefghi" : @(1 + 1.0f/10),
+            @"bcdefghij" : @(2.0f/10)
         };
         expect([dict ngramsForString:@"abcdefghij" withWidth:9]).to.equal(expectedResult);
     });
 
     it(@"returns the original string when same length as the n-gram width", ^{
         NSString *s = @"abcdefghij";
-        NSDictionary *expectedResult = @{ s : s };
+        NSDictionary *expectedResult = @{ s : @(1 + 1.0f/s.length) };
         expect([dict ngramsForString:s withWidth:s.length]).to.equal(expectedResult);
     });
 
@@ -79,7 +79,7 @@ describe(@"ngramsForString", ^{
     });
 
     it(@"removes non-alphanumeric characters", ^{
-        NSDictionary *expectedResult = @{ @"abc" : @"abc", @"bcd" : @"bcd" };
+        NSDictionary *expectedResult = @{ @"abc" : @(1 + 1.0f/4), @"bcd" : @(2.0f/4) };
         expect([dict ngramsForString:@"a, b^^%c,d"]).to.equal(expectedResult);
     });
     
