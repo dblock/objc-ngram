@@ -1,6 +1,7 @@
 language: objective-c
 before_script:
+  - export LANG=en_US.UTF-8
   - cd Demo ; pod install ; cd ..
-xcode_project: Demo/Demo.xcodeproj
+xcode_workspace: Demo/Demo.xcworkspace
 xcode_scheme: Demo
 xcode_sdk: iphonesimulator
