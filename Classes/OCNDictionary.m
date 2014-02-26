@@ -51,13 +51,6 @@ const NSInteger defaultWidth = 3;
     return [[str componentsSeparatedByCharactersInSet:[[NSCharacterSet letterCharacterSet] invertedSet]] componentsJoinedByString:@""];
 }
 
-/*
- Returns a dictionary of n-grams and their scores.
- 
- @param str String to return n-grams for.
- @param max Maximum number of n-grams to return.
- @param width Width (the number n) of each n-gram.
- */
 - (NSDictionary *)ngramsForString:(NSString *)str withMax:(NSInteger)max andWidth:(NSInteger)width
 {
     str = [self filterString:str];
