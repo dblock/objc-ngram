@@ -1,0 +1,7 @@
+pod "objc-ngram", :path => "../objc-ngram.podspec"
+
+target "Demo" do
+end
+
+target "DemoTests" do
+end
