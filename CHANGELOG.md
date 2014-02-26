@@ -1,5 +1,3 @@
-# objc-ngram CHANGELOG
+## TBD
 
-## 0.1.0
-
-Initial release.
+* Initial public release.
