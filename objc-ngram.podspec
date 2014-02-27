@@ -3,6 +3,7 @@ Pod::Spec.new do |s|
   s.version          = "1.0.0"
   s.summary          = "Rudimentary n-gram search in Objective-C."
   s.description      = <<-DESC
+                        Implements a dictionary with full text search n-gram-based functionality.
                        DESC
   s.homepage         = "https://github.com/dblock/objc-ngram"
   s.license          = 'MIT'
@@ -13,9 +14,4 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Classes'
-  s.resources = 'Assets'
-
-  s.ios.exclude_files = 'Classes/osx'
-  s.osx.exclude_files = 'Classes/ios'
-  s.public_header_files = 'Classes/**/*.h'
 end
