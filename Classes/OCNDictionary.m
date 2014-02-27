@@ -10,6 +10,7 @@
 #import "OCNNgramGenerator.h"
 
 @interface OCNDictionary ()
+@property(readonly, assign) NSInteger ngramWidth;
 @property(readonly, nonatomic) OCNNgramGenerator *generator;
 @property(readonly, nonatomic) NSMapTable *items;
 @end
@@ -21,11 +22,21 @@
     return [[OCNDictionary alloc] init];
 }
 
++ (instancetype)dictionaryWithNgramWidth:(NSInteger)width
+{
+    return [[OCNDictionary alloc] initWithNgramWidth:width];
+}
+
 - (instancetype) init
+{
+    return [self initWithNgramWidth:3];
+}
+
+- (instancetype) initWithNgramWidth:(NSInteger)ngramWidth
 {
     self = [super init];
     if (self) {
-        _ngramWidth = 3;
+        _ngramWidth = ngramWidth;
         _generator = [[OCNNgramGenerator alloc] init];
         _items = [NSMapTable strongToStrongObjectsMapTable];
     }
@@ -45,20 +56,42 @@
     }];
 }
 
-- (NSMapTable *)matchObjectsForKey:(NSString *)key
+- (NSArray *)matchObjectsForKey:(NSString *)key
 {
-    NSMapTable *results = [NSMapTable strongToStrongObjectsMapTable];
+    NSMapTable *resultsTable = [NSMapTable strongToStrongObjectsMapTable];
+    
     NSDictionary *ngramsWithScores = [self.generator ngramsForString:key withWidth:self.ngramWidth];
     [ngramsWithScores enumerateKeysAndObjectsUsingBlock:^(NSString *ngram, NSNumber *score, BOOL *stop) {
         NSMapTable *objectsToScores = [self.items objectForKey:ngram];
         for (id object in objectsToScores.keyEnumerator) {
             NSNumber *ngramScore = [objectsToScores objectForKey:object];
-            NSNumber *currentScore = [results objectForKey:object] ?: @(0);
+            NSNumber *currentScore = [resultsTable objectForKey:object] ?: @(0);
             currentScore = @(currentScore.floatValue + ngramScore.floatValue);
-            [results setObject:currentScore forKey:object];
+            [resultsTable setObject:currentScore forKey:object];
         }
     }];
-    return results;
+    
+    NSMutableArray *resultsArray = [NSMutableArray array];
+    
+    for (id object in [resultsTable keyEnumerator]) {
+        NSNumber *score = [resultsTable objectForKey:object];
+        OCNObjectScore *objectScore = [[OCNObjectScore alloc] initWithObject:object andScore:score.floatValue];
+        NSUInteger insertIndex = [resultsArray indexOfObject:objectScore
+                                     inSortedRange:(NSRange) {0, [resultsArray count]}
+                                           options:NSBinarySearchingInsertionIndex
+                                             usingComparator:^(OCNObjectScore *lhs, OCNObjectScore *rhs) {
+                                                 if (lhs.score > rhs.score) {
+                                                     return NSOrderedAscending;
+                                                 } else if (lhs.score < rhs.score) {
+                                                     return NSOrderedDescending;
+                                                 } else {
+                                                     return NSOrderedSame;
+                                                 }
+                                             }];
+        [resultsArray insertObject:objectScore atIndex:insertIndex];
+    }
+    
+    return resultsArray;
 }
 
 @end

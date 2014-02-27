@@ -6,6 +6,35 @@
 
 ## Usage
 
+Create an `OCNDictionary` and add objects to it with a given key. The key must be a string and is split into 3-grams.
+
+``` objc
+OCNDictionary *dict = [OCNDictionary dictionary];
+[dict addObject:@"red brown fox" forKey:@"red brown fox"];
+[dict addObject:@"white big bear" forKey:@"white big bear"];
+[dict addObject:@"hiding rabbit" forKey:@"hiding"];
+
+NSArray *results = [dict matchObjectsForKey:@"white fox"];
+for (OCNObjectScore *result in results) {
+  NSLog(@"'%@' has a score of %f", result.object, result.score);
+}
+```
+
+This will output the following.
+
+```
+'white big bear' has a score of 1.416667
+'red brown fox' has a score of 0.181818
+```
+
+You can create a `OCNDictionary` with a different n-gram size.
+
+``` objc
+OCNDictionary *dict = [OCNDictionary dictionaryWithNgramWidth:4];
+```
+
+## Demo
+
 To run the example project; clone the repo, and run `pod install` from the Demo directory first.
 
 ## Installation

@@ -7,14 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OCNObjectScore.h"
 
 @interface OCNDictionary : NSObject
-/**
- Size of each n-gram.
- **/
-@property(nonatomic, assign) NSInteger ngramWidth;
 
 + (instancetype)dictionary;
+
+/**
+ Initialize a dictionary with a n-gram width (the number n in n-gram).
+ Default is 3.
+ **/
++ (instancetype)dictionaryWithNgramWidth:(NSInteger)width;
+
+/**
+ Initialize a dictionary with a n-gram width (the number n in n-gram).
+ Default is 3.
+ **/
+- (id) initWithNgramWidth:(NSInteger)ngramWidth;
 
 /**
  Insert an object into the dictionary.
@@ -28,6 +37,6 @@
 /**
  Match objects.
  **/
-- (NSMapTable *)matchObjectsForKey:(NSString *)key;
+- (NSArray *)matchObjectsForKey:(NSString *)key;
 
 @end
