@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C28D3E318BEE65F00C846EA /* OCNNgramGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C28D3E218BEE65F00C846EA /* OCNNgramGeneratorTests.m */; };
 		3CA55D5118BE787D00B44CD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA55D5018BE787D00B44CD3 /* Foundation.framework */; };
 		3CA55D5318BE787D00B44CD3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA55D5218BE787D00B44CD3 /* CoreGraphics.framework */; };
 		3CA55D5518BE787D00B44CD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA55D5418BE787D00B44CD3 /* UIKit.framework */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C28D3E218BEE65F00C846EA /* OCNNgramGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCNNgramGeneratorTests.m; sourceTree = "<group>"; };
 		3CA55D4D18BE787D00B44CD3 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA55D5018BE787D00B44CD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3CA55D5218BE787D00B44CD3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -151,6 +153,7 @@
 			children = (
 				3CA55D7B18BE787D00B44CD3 /* OCNDictionaryTests.m */,
 				3CA55D7618BE787D00B44CD3 /* Supporting Files */,
+				3C28D3E218BEE65F00C846EA /* OCNNgramGeneratorTests.m */,
 			);
 			path = DemoTests;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C28D3E318BEE65F00C846EA /* OCNNgramGeneratorTests.m in Sources */,
 				3CA55D7C18BE787D00B44CD3 /* OCNDictionaryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
