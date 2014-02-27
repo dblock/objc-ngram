@@ -19,7 +19,8 @@
 - (NSDictionary *)ngramsForString:(NSString *)str withWidth:(NSInteger)width;
 
 /**
- Returns a dictionary of n-grams and their scores.
+ Returns a dictionary of n-grams of size width and their scores.
+ If str is smaller than width, str is returned as the n-gram value.
  
  @param str String to return n-grams for.
  @param max Maximum number of n-grams to return.

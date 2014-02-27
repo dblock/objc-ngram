@@ -56,6 +56,8 @@
             NSNumber *existingScore = [ngrams objectForKey:substring] ?: @(0.0f);
             [ngrams setObject:[NSNumber numberWithFloat:existingScore.floatValue + score] forKey:substring];
         }
+    } else if (str.length) {
+        [ngrams setObject:[NSNumber numberWithFloat:2.0f] forKey:str];
     }
     return ngrams;
 }

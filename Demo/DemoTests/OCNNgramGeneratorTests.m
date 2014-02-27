@@ -32,12 +32,12 @@ describe(@"ngramsForString", ^{
     });
     
     it(@"returns 1-character n-gram", ^{
-        NSDictionary *expectedResult = @{};
+        NSDictionary *expectedResult = @{ @"a" : @(2.0f) };
         expect([generator ngramsForString:@"a" withWidth:3]).to.equal(expectedResult);
     });
     
     it(@"returns a 2-character n-gram", ^{
-        NSDictionary *expectedResult = @{};
+        NSDictionary *expectedResult = @{ @"ab" : @(2.0f) };
         expect([generator ngramsForString:@"ab" withWidth:3]).to.equal(expectedResult);
     });
     
@@ -78,7 +78,7 @@ describe(@"ngramsForString", ^{
     });
     
     it(@"does not return more than the n-gram size", ^{
-        NSDictionary *expectedResult = @{};
+        NSDictionary *expectedResult = @{ @"abcdefghij" : @(1 + 1.0f) };
         expect([generator ngramsForString:@"abcdefghij" withWidth:12]).to.equal(expectedResult);
     });
     
