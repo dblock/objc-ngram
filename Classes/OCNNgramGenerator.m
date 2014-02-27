@@ -53,7 +53,8 @@
             CGFloat score = (step == 0) ? 1 + 1.0f / str.length : 2.0f / str.length;
             NSInteger rangeWidth = fmin(width, str.length - step);
             NSString *substring = [str substringWithRange:NSMakeRange(step, rangeWidth)];
-            [ngrams setObject:@(score) forKey:substring];
+            NSNumber *existingScore = [ngrams objectForKey:substring] ?: @(0.0f);
+            [ngrams setObject:[NSNumber numberWithFloat:existingScore.floatValue + score] forKey:substring];
         }
     }
     return ngrams;

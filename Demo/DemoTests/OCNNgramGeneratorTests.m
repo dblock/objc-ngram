@@ -87,6 +87,10 @@ describe(@"ngramsForString", ^{
         expect([generator ngramsForString:@"a, b^^%c,d" withWidth:3]).to.equal(expectedResult);
     });
     
+    it(@"sums up scores of repeating n-grams", ^{
+        NSDictionary *expectedResult = @{ @"aaa" : @(1 + 1.0f/4 + 2.0f/4) };
+        expect([generator ngramsForString:@"aaaa" withWidth:3]).to.equal(expectedResult);
+    });
 });
 
 SpecEnd
