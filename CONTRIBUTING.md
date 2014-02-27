@@ -29,8 +29,7 @@ Ensure that you can build the project and run tests.
 
 ```
 bundle install
-cd Demo
-pod install
+rake spec
 ```
 
 Open Demo/Demo.xcworkspace in XCode.

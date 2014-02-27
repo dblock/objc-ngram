@@ -1,6 +1,11 @@
 desc "Runs the specs [EMPTY]"
-task :spec do
-  # Provide your own implementation
+task :pods do
+  sh "cd Demo ; pod install"
+end
+
+desc "Runs the specs [EMPTY]"
+task :spec => [ :pods ] do
+  sh "xctool -workspace Demo/Demo.xcworkspace -scheme Demo -sdk iphonesimulator test"
 end
 
 task :version do
@@ -20,7 +25,7 @@ task :version do
     puts "The current released version of your pod is " + remote_spec_version.to_s()
     version = suggested_version_number
   end
-  
+
   puts "Enter the version you want to release (" + version + ") "
   new_version_number = $stdin.gets.strip
   if new_version_number == ""
@@ -53,7 +58,7 @@ task :release do
 
   puts "* Running specs"
   sh "rake spec"
- 
+
   puts "* Linting the podspec"
   sh "pod lib lint"
 
