@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C28D3E318BEE65F00C846EA /* OCNNgramGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C28D3E218BEE65F00C846EA /* OCNNgramGeneratorTests.m */; };
+		3C28D3EC18BF81B400C846EA /* sentences.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C28D3EB18BF81B400C846EA /* sentences.txt */; };
 		3CA55D5118BE787D00B44CD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA55D5018BE787D00B44CD3 /* Foundation.framework */; };
 		3CA55D5318BE787D00B44CD3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA55D5218BE787D00B44CD3 /* CoreGraphics.framework */; };
 		3CA55D5518BE787D00B44CD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA55D5418BE787D00B44CD3 /* UIKit.framework */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		3C28D3E218BEE65F00C846EA /* OCNNgramGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCNNgramGeneratorTests.m; sourceTree = "<group>"; };
+		3C28D3EB18BF81B400C846EA /* sentences.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sentences.txt; path = Data/sentences.txt; sourceTree = "<group>"; };
 		3CA55D4D18BE787D00B44CD3 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA55D5018BE787D00B44CD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3CA55D5218BE787D00B44CD3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -89,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C28D3EA18BF81A400C846EA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3C28D3EB18BF81B400C846EA /* sentences.txt */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		3CA55D4418BE787D00B44CD3 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +136,7 @@
 		3CA55D5618BE787D00B44CD3 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				3C28D3EA18BF81A400C846EA /* Data */,
 				3CA55D5F18BE787D00B44CD3 /* OCNAppDelegate.h */,
 				3CA55D6018BE787D00B44CD3 /* OCNAppDelegate.m */,
 				3CA55D6218BE787D00B44CD3 /* Main.storyboard */,
@@ -251,6 +262,7 @@
 				3CA55D6918BE787D00B44CD3 /* Images.xcassets in Resources */,
 				3CA55D5B18BE787D00B44CD3 /* InfoPlist.strings in Resources */,
 				3CA55D6418BE787D00B44CD3 /* Main.storyboard in Resources */,
+				3C28D3EC18BF81B400C846EA /* sentences.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,7 +4,27 @@
 [![Version](http://cocoapod-badges.herokuapp.com/v/objc-ngram/badge.png)](http://cocoadocs.org/docsets/objc-ngram)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/objc-ngram/badge.png)](http://cocoadocs.org/docsets/objc-ngram)
 
+## Demo
+
+To run the example project, run `pod try objc-ngram`.
+
+The demo loads [sentences.txt](Demo/Demo/Data/sentences.txt) and lets you search for free-formed text in it.
+
+![screenshot](Demo/ScreenShots/saucy-quality-foods.png)
+
+## Installation
+
+objc-ngram is available through [CocoaPods](http://cocoapods.org), to install it add the following line to your Podfile:
+
+    pod "objc-ngram"
+
 ## Usage
+
+Import OCNDictionary.
+
+``` objc
+#import <objc-ngram/OCNDictionary.h>
+```
 
 Create an `OCNDictionary` and add objects to it with a given key. The key must be a string and is split into 3-grams.
 
@@ -32,16 +52,6 @@ You can create a `OCNDictionary` with a different n-gram size.
 ``` objc
 OCNDictionary *dict = [OCNDictionary dictionaryWithNgramWidth:4];
 ```
-
-## Demo
-
-To run the example project; clone the repo, and run `pod install` from the Demo directory first.
-
-## Installation
-
-objc-ngram is available through [CocoaPods](http://cocoapods.org), to install it add the following line to your Podfile:
-
-    pod "objc-ngram"
 
 ## Contributing
 

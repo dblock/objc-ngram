@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OCNViewController : UIViewController
+@interface OCNViewController : UIViewController<UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @end
