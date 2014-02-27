@@ -20,7 +20,7 @@ objc-ngram is available through [CocoaPods](http://cocoapods.org), to install it
 
 ## Usage
 
-Import OCNDictionary.
+Import `OCNDictionary`.
 
 ``` objc
 #import <objc-ngram/OCNDictionary.h>

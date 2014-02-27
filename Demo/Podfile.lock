@@ -1,6 +1,6 @@
 PODS:
   - Expecta (0.2.3)
-  - objc-ngram (0.1.0)
+  - objc-ngram (1.0.0)
   - Specta (0.2.1)
 
 DEPENDENCIES:
@@ -14,7 +14,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Expecta: dbc4a27fabb853bdd2e907e33f11ee43a9a47d0c
-  objc-ngram: edf77def3a71c63c1c3d1f738961f2104a43ad0c
+  objc-ngram: c9391c8d6b483af2559d0cfd083030eb9b162e18
   Specta: 2d06220591110c6d9757d8be8ecf8e63aa40dc2a
 
 COCOAPODS: 0.29.0

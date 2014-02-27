@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "objc-ngram"
-  s.version          = "0.1.0"
+  s.version          = "1.0.0"
   s.summary          = "Rudimentary n-gram search in Objective-C."
   s.description      = <<-DESC
                        DESC
