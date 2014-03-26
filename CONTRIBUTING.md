@@ -1,5 +1,5 @@
-Contributing to this Project
-============================
+Contributing
+============
 
 You're encouraged to submit [pull requests](https://github.com/dblock/objc-ngram/pulls), [propose features and discuss issues](https://github.com/dblock/objc-ngram/issues).
 
@@ -23,26 +23,43 @@ git pull upstream master
 git checkout -b my-feature-branch
 ```
 
-#### Bundle Install and Test
+#### Pod and Bundle Install
 
-Ensure that you can build the project and run tests.
+Install CocoaPods via Ruby Bundler.
 
 ```
 bundle install
-rake spec
 ```
 
-Open Demo/Demo.xcworkspace in XCode.
+Install dependencies via CocoaPods,
+
+```
+pod install
+```
+
+#### Open Workspace
+
+Open the objc-ngram.xcworkspace workspace in XCode.
 
 #### Write Tests
 
-Try to write a test that reproduces the problem you're trying to fix or describes a feature that you want to build.
+There're two sets of tests: unit tests and integration tests. Try to write a test that reproduces the problem you're trying to fix or describes a feature that you want to build.
 
-We definitely appreciate pull requests that highlight or reproduce a problem, even without a fix.
+We definitely appreciate pull requests that highlight or reproduce a problem, even without a fix. We don't accept pull requests without tests.
 
 #### Write Code
 
 Implement your feature or bug fix.
+
+Make sure that you can build the project and run all tests successfully.
+
+You may want to run tests on the command line.
+
+```
+brew install xctool
+open -a iPhone\ Simulator
+xctool -workspace objc-ngram.xcworkspace -scheme Tests -sdk iphonesimulator build test
+```
 
 #### Write Documentation
 
