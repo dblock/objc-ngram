@@ -10,7 +10,7 @@
 
 @interface OCNObjectScore : NSObject
 @property(nonatomic, readonly) id object;
-@property(nonatomic, assign) CGFloat score;
+@property(nonatomic, assign) float score;
 
-- (id) initWithObject:(id)object andScore:(CGFloat)score;
+- (id) initWithObject:(id)object andScore:(float)score;
 @end

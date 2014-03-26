@@ -18,7 +18,7 @@
 - (NSInteger) stepSizeForLen:(NSInteger)length withMax:(NSInteger)max andWidth:(NSInteger)width
 {
     if (max > 0) {
-        return MAX(1.0, (NSInteger) (0.5 + (CGFloat) length/max));
+        return MAX(1.0, (NSInteger) (0.5 + (float) length/max));
     } else {
         return 1;
     }
@@ -50,7 +50,7 @@
             // and multiplying scores of matching ngrams together yields a score function that has the
             // property that score(x,y) > score(x,z) for any string z containing y and score(x,y) > score(x,z)
             // for any string z contained in y.
-            CGFloat score = (step == 0) ? 1 + 1.0f / str.length : 2.0f / str.length;
+            float score = (step == 0) ? 1 + 1.0f / str.length : 2.0f / str.length;
             NSInteger rangeWidth = fmin(width, str.length - step);
             NSString *substring = [str substringWithRange:NSMakeRange(step, rangeWidth)];
             NSNumber *existingScore = [ngrams objectForKey:substring] ?: @(0.0f);

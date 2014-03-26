@@ -1,21 +1,10 @@
 //
 //  OCNNgramGeneratorTests.m
-//  Demo
+//  objc-ngram
 //
 //  Created by Daniel Doubrovkine on 2/26/14.
 //  Copyright (c) 2014 Daniel Doubrovkine. All rights reserved.
-//
 
-//
-//  OCNDictionaryTests
-//
-//  Created by Daniel Doubrovkine on 2/26/14.
-//  Copyright (c) 2014 Daniel Doubrovkine. All rights reserved.
-//
-
-#define EXP_SHORTHAND
-#include <Specta/Specta.h>
-#include <Expecta/Expecta.h>
 #include <objc-ngram/OCNNgramGenerator.h>
 
 SpecBegin(OCNNgramGenerator)

@@ -1,0 +1,21 @@
+//
+//  Tests-Prefix.pch
+//  objc-ngram
+//
+//  Created by Daniel Doubrovkine on 3/10/14.
+//  Copyright (c) 2014 Artsy. All rights reserved.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+
+#define EXP_SHORTHAND
+#import <Specta/Specta.h>
+#import <Expecta/Expecta.h>
+
+#endif

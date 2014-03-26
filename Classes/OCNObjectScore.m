@@ -9,7 +9,7 @@
 
 @implementation OCNObjectScore
 
-- (id) initWithObject:(id)object andScore:(CGFloat)score
+- (id) initWithObject:(id)object andScore:(float)score
 {
     self = [super init];
     if (self) {
