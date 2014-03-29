@@ -10,7 +10,7 @@ To run the example project, run `pod try objc-ngram`.
 
 The demo loads [sentences.txt](Demo/Data/sentences.txt) and lets you search for free-formed text in it.
 
-![screenshot](ScreenShots/saucy-quality-foods.png)
+![demo](Screenshots/objc-ngram.gif)
 
 ## Installation
 
